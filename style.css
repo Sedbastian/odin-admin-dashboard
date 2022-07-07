@@ -3,6 +3,7 @@ body {
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 6fr;
     margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -11,7 +12,7 @@ nav {
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(10, min-content);
 
     padding-left: 1rem;
     padding-right: 1rem;
@@ -28,11 +29,18 @@ header {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr 1fr 2fr;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
 
-    background-color: rgb(255, 255, 255);
+    background-color: white;
+}
+
+header img {
+    height: 1.5rem;
 }
 
 main {
@@ -41,7 +49,7 @@ main {
 
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content min-content;
     gap: 2rem;
 
     padding-top: 1.5rem;
@@ -49,6 +57,7 @@ main {
     padding-right: 1rem;
 
     background-color: rgb(192, 192, 192);
+    box-shadow: inset 0 .2rem .6rem rgb(128, 128, 128);
 }
 
 .projects {
