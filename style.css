@@ -1,7 +1,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: min-content 6fr;
     margin: 0;
     padding: 0;
 }
@@ -27,9 +27,12 @@ header {
     grid-row: 1 / 2;
 
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 6fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 2rem;
+
+    justify-items: center;
+    align-items: center;
 
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -40,7 +43,17 @@ header {
 }
 
 header img {
-    height: 1.5rem;
+    height: 2rem;
+}
+
+header .searchImgInput {
+    justify-self: start;
+    display: flex;
+}
+
+header .avatarSalut {
+    justify-self: start;
+    display: flex;
 }
 
 main {
@@ -48,7 +61,7 @@ main {
     grid-row: 2 / 3;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: min-content min-content;
     gap: 2rem;
 
@@ -56,7 +69,7 @@ main {
     padding-left: 1rem;
     padding-right: 1rem;
 
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(224, 224, 224);
     box-shadow: inset 0 .2rem .6rem rgb(128, 128, 128);
 }
 
@@ -65,13 +78,15 @@ main {
     grid-row: 1 / 3;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: min-content;
     gap: 2rem;
 }
 
 .projects h2 {
     grid-column: 1 / -1;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .cards {
@@ -93,15 +108,50 @@ main {
 .announcements {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, min-content);
+    gap: 2rem;
 
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.announcements h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.announcementsCard {
+    padding: 1rem;
+    
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 1rem;
+    border-left-width: .5rem;
+    box-shadow: 0.15rem 0.15rem .5rem rgb(150, 150, 150);
 }
 
 .trending {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(5, min-content);
+    gap: 2rem;
+
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.trendingCard {
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 1rem;
+    border-left-width: .5rem;
+    box-shadow: 0.15rem 0.15rem .5rem rgb(150, 150, 150);
 }
