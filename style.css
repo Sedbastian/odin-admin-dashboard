@@ -27,32 +27,48 @@ header {
     grid-row: 1 / 2;
 
     display: grid;
-    grid-template-columns: 6fr 1fr 1fr 2fr;
-    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 2rem;
 
-    justify-items: center;
+    justify-items: stretch;
     align-items: center;
 
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     background-color: white;
 }
 
 header img {
-    height: 2rem;
+    height: 1.75rem;
 }
 
-header .searchImgInput {
-    justify-self: start;
+header .upperLeft {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     display: flex;
 }
 
-header .avatarSalut {
-    justify-self: start;
+header .upperRight {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    display: flex;
+}
+
+header .lowerLeft {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+}
+
+header .lowerRight {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
     display: flex;
 }
 
