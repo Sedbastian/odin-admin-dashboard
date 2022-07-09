@@ -6,6 +6,8 @@
 
 :root {
     --naranja: rgb(192, 64, 0);
+    --violeta: rgb(48, 0, 92);
+    --violeta-suave: hsl(270, 100%, 90%);
 }
 
 body {
@@ -28,9 +30,32 @@ nav {
     padding-left: 1rem;
     padding-right: 1rem;
 
-    background-color: rgb(64, 0, 128);
+    background-color: var(--violeta);
     color: var(--naranja);
     font-size: 1.75rem;
+    font-weight: bold;
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+}
+
+nav .settings {
+    padding-top: 3rem;
+}
+
+nav .jupiter {
+    height: 6rem;
+}
+
+nav .icon {
+    height: 2rem;
+    filter: invert(100%) opacity(30%);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-right: 1rem;
+    
 }
 
 header {
@@ -40,21 +65,23 @@ header {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
-
+    gap: 0;
+    
     justify-items: stretch;
     align-items: center;
 
-    padding-top: 1rem;
+    padding-top: 0;
     padding-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
 
-    background-color: white;
+    background-color: var(--violeta-suave);
+    color: var(--violeta);
 }
 
-header img {
+header .icon {
     height: 1.75rem;
+    filter: opacity(70%);
 }
 
 header .upperLeft {
@@ -91,6 +118,10 @@ header .upperRight {
     padding-right: 2rem;
 }
 
+header .upperRight .avatarChico {
+    height: 3rem;
+}
+
 header .upperRight div {
     font-weight: bold;
 }
@@ -111,7 +142,6 @@ header .lowerLeft .bigText {
 
 header .lowerLeft .avatarGrande {
     height: 5rem;
-    
     padding-right: 1rem;
 }
 
@@ -130,10 +160,8 @@ header .lowerRight div {
     background-color: var(--naranja);
     padding: .75rem 2rem;
     border-radius: 2rem;
-    font-weight: bold;
+    font-weight: 900;
 }
-
-
 
 main {
     grid-column: 2 / 3;
@@ -169,6 +197,10 @@ main {
 }
 
 .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto auto;
+    
     padding: 1rem;
     
     background-color: white;
@@ -180,8 +212,16 @@ main {
     box-shadow: 0.15rem 0.15rem .5rem rgb(150, 150, 150);
 }
 
+.projects .cards .icons {
+    text-align: end;
+    padding-top: 1rem;
+    align-self: end;
+}
+
 .projects div img {
     height: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .announcements {
